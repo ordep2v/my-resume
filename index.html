@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro's Resume</title>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            cursor: default;
+            position: relative;
+        }
+
+        html,
+        body {
+            background: #1b2735;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Roboto Mono", monospace, arial;
+            min-height: 100%;
+        }
+
+        main {
+            min-height: 60rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-bottom: 20rem;
+            background: linear-gradient(to top, #1b2735 0%, black 100%);
+        }
+
+        content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-box {
+            display: flex;
+            justify-content: center;
+            background: black;
+        }
+
+        #banner {
+            width: 100%;
+        }
+
+        #video {
+            padding: 1rem 0 0 0;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        header {
+            box-shadow: 1px 1px 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
+            background: black;
+            opacity: 0.8;
+            min-height: 55px;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 400;
+            width: 100%;
+            z-index: 6;
+            position: fixed;
+        }
+
+        header>nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            font-weight: 500;
+            margin-top: 1.5rem;
+        }
+
+        .button-header {
+            color: #f9f9f9;
+            transition: 0.5s;
+        }
+
+        #button-header:hover {
+            color: #ccc;
+        }
+
+        #button-header:visited {
+            text-decoration: none;
+        }
+
+        .terminal-window {
+            width: 100rem;
+            height: 100%;
+            display: inline-block;
+            flex-direction: column;
+            z-index: 5;
+        }
+
+        .terminal-header {
+            width: 100rem;
+            height: 3rem;
+            display: flex;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding-left: 1rem;
+            border-top-right-radius: 5px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-left-style: solid;
+            border-right-width: 1px;
+            border-top-width: 1px;
+            border-left-width: 1px;
+            border-color: #b8b9b9;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            background: #43423d;
+        }
+
+        .terminal-screen {
+            min-height: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0 0 2px 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-style: solid;
+            border-color: #b8b9b9;
+            border-width: 1px;
+            background-color: #181818;
+        }
+
+        .terminal-screen-text {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        #terminal-screen-first {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            color: #f2f2f2;
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        #terminal-screen-first-img {
+            max-width: 15rem;
+            border-radius: 10px;
+        }
+
+        #terminal-screen-first-img img {
+            max-width: 100%;
+            border-radius: 100px;
+        }
+
+        #terminal-screen-first-name {
+            max-width: 100%;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 2rem;
+            padding-bottom: 2rem;
+            font-size: 3rem;
+        }
+
+        .terminal-screen-line {
+            max-width: 100%;
+            display: flex;
+            align-self: center;
+            padding-right: 5rem;
+            margin: 0 0 0.5rem 6rem;
+            color: #f5f5f5;
+            font-size: 1.8rem;
+        }
+
+        article>.terminal-screen-line:first-child {
+            margin: 0 0 0.5rem 4rem;
+        }
+
+        article>.terminal-screen-line:nth-child(2) {
+            margin: 0 0 0.5rem 4.5rem;
+        }
+
+        #terminal-comma {
+            max-width: 100%;
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            display: flex;
+            align-items: flex-start;
+            margin: -1rem 0 0.5rem 6rem;
+        }
+
+        #first-data-line {
+            margin: 0 0 0.5rem 6rem;
+        }
+
+        .blue-like-json {
+            color: rgb(144, 207, 228);
+        }
+
+        .salmon-like-json {
+
+            color: rgb(233, 129, 122);
+        }
+
+        .more-infos {
+            margin-top: 1rem;
+        }
+
+        .terminal-bar {
+            display: flex;
+            background: #ccc;
+        }
+
+        .terminal-bar-buttons {
+            max-width: 100%;
+            height: 1.8rem;
+            display: flex;
+            align-content: center;
+            justify-content: space-around;
+        }
+
+        .terminal-header-icon {
+            width: 18px;
+            height: 18px;
+            align-self: center;
+            display: block;
+        }
+
+        .terminal-header-buttons {
+            width: 10rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #terminal-header-minimize {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #b8b9b9;
+            box-shadow: 0.8px 1px 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
+            position: relative;
+            top: 4.5px;
+            right: 12px;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.3rem;
+            background-color: #bbb;
+            line-height: 12px;
+            display: flex;
+            line-height: 5px;
+            font-weight: bold;
+            padding-left: 0.2rem;
+            font-size: 2rem;
+        }
+
+        #terminal-header-maximize {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            background-color: #bbb;
+            line-height: 12px;
+            padding: 0.1rem 0 0 0.1rem;
+            top: 4.5px;
+            right: 8px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #b8b9b9;
+            box-shadow: 0.8px 1px 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
+            vertical-align: middle;
+        }
+
+        #terminal-header-close {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #b8b9b9;
+            box-shadow: 0.8px 1px 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
+            position: relative;
+            top: 4.5px;
+            right: 12px;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.3rem;
+            background-color: #dc6c4f;
+            line-height: 12.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 4px;
+            font-size: 2.2rem;
+            padding: 0 0 0.3rem 0.1rem;
+        }
+
+        #terminal-header-minimize:hover,
+        #terminal-header-maximize:hover,
+        #terminal-header-close:hover {
+            filter: brightness(90%);
+        }
+
+        #box-maximize {
+            width: 80%;
+            height: 70%;
+            margin-top: 0.2rem;
+            opacity: 0.7;
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            border-radius: 2px;
+            background: transparent;
+        }
+
+        .terminal-bar-button {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-right-color: #aaa;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-bar-button:hover {
+            background-color: #f2f2f2;
+        }
+
+        .terminal-header-name {
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0.5rem 0 0 7rem;
+            font-size: 1.2rem;
+            justify-self: center;
+            color: #f5f5f5;
+        }
+
+        footer {
+            max-height: 100%;
+            width: 100%;
+            z-index: 6;
+            position: absolute;
+            margin: auto;
+            bottom: 0;
+            background: #013680;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border-top-style: solid;
+            border-top-color: #1d1d1d;
+            border-top-width: 2px;
+
+        }
+
+        footer>nav {
+            margin-top: 1rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-evenly;
+            color: #f5f5f5;
+        }
+
+        footer>nav>div>a>img {
+            width: 10rem;
+            height: 10rem;
+            filter: invert();
+            border-radius: 0;
+        }
+        footer>nav>div>a>img:hover {
+            filter: invert(85%);
+        }
+        .licenses {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        @media (max-width: 500px) {
+            #banner {
+                display: none;
+            }
+            #video {
+                margin-top: 3rem;
+                max-width: 100%;
+            }
+            .terminal-bar {
+                max-width: 35rem;
+            }
+            .terminal-bar-button {
+                font-size: .98rem;
+            }
+            .terminal-bar-buttons {
+                max-width: 100%;
+            }
+            .terminal-header {
+                max-width: 35rem;
+            }
+            #terminal-screen-first-img>img {
+                width: 10rem;
+            }
+            #terminal-screen-first-name {
+                font-size: 1.5rem;
+            }
+            .terminal-screen-line {
+                margin-left: 0 !important;
+                font-size: 1.2rem !important;
+            }
+            .terminal-window {
+                max-width: 35rem;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="video-box">
+        <div id="banner">Pedro's Resume</div>
+        <div id="video">
+            <video autoplay muted loop playsinline preload>
+                <source src="https://res.cloudinary.com/dtqaoxaot/video/upload/v1629943922/Earth_-_17235_ietn8f.mp4"
+                    type="video/mp4" />
+            </video>
+        </div>
+    </section>
+    <main>
+        <content>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-header-name">
+                        pedro@pc: /
+                    </div>
+                    <div class="terminal-header-buttons">
+                        <div id="terminal-header-minimize">_</div>
+                        <div id="terminal-header-maximize">
+                            <div id="box-maximize"></div>
+                        </div>
+                        <div id="terminal-header-close">&#10799;</div>
+                    </div>
+                </div>
+                <div class="terminal-screen">
+                    <div class="terminal-bar">
+                        <div class="terminal-bar-buttons">
+                            <div class="terminal-bar-button"><u>F</u>ile</div>
+                            <div class="terminal-bar-button"><u>E</u>dit</div>
+                            <div class="terminal-bar-button"><u>V</u>iew</div>
+                            <div class="terminal-bar-button"><u>S</u>earch</div>
+                            <div class="terminal-bar-button"><u>T</u>erminal</div>
+                            <div class="terminal-bar-button"><u>H</u>elp</div>
+                        </div>
+                    </div>
+                    <div class="terminal-screen-text">
+                        <div id="terminal-screen-first">
+                            <div id="terminal-screen-first-img">
+                                <img
+                                    src="https://res.cloudinary.com/dtqaoxaot/image/upload/v1630012710/fotoperfil_rfdnbz.jpg" />
+                            </div>
+                            <div id="terminal-screen-first-name">pedro-paulo-cunha.json</div>
+                        </div>
+                        <article>
+                            <article>
+                                <div class="terminal-screen-line">
+                                    <p>&nbsp;{</p>
+                                </div>
+                                <div class="terminal-screen-line">
+                                    <p class='blue-like-json'>"aboutMe": </p>
+                                </div>
+                                <div class="terminal-screen-line">
+                                    <p class='salmon-like-json'>"Web and RPA developer, with knowledge in back-end,
+                                        front-end and blockchain, developing intelligent and innovative solutions, using
+                                        cutting edge
+                                        technologies and applying good programming practices. I currently work at Addere
+                                        Solutions, a Hyland Software reseller."</p>
+                                </div>
+                                <span id="terminal-comma">
+                                    <p>,</p>
+                                </span>
+
+                            </article>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"personalData": </p>{
+                            </div>
+                            <div class="terminal-screen-line" id='first-data-line'>
+                                <p class='blue-like-json'>"name"</p>:
+                                <p class='salmon-like-json'>"Pedro Paulo Cunha"</p>,
+                            </div>
+                            <div class="terminal-screen-line" id='first-data-line'>
+                                <p class='blue-like-json'>"email"</p>:
+                                <p class='salmon-like-json'>"pedro@adderesolutions.com"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"gender"</p>:
+                                <p class='salmon-like-json'>"male"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"birth"</p>:
+                                <p class='salmon-like-json'>"03.23.1995"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"county"</p>:
+                                <p class='salmon-like-json'>"Vitória"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"state"</p>:
+                                <p class='salmon-like-json'>"Espírito Santo"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"country"</p>:
+                                <p class='salmon-like-json'>"Brazil"</p>
+                            </div>
+
+                            <div class="terminal-screen-line">
+                                <p>},</p>
+                            </div>
+
+                        </article>
+
+                        <article>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"skills" </p>:{
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"development" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"css"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>
+                                    "html5"
+                                </p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"javascript-node"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"javascript-react"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"javascript-react-native"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"javascript-testing-library"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"javascript-jest-library"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"java"</p>
+                            </div>
+
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"blockchain-development" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"solidity"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>
+                                    "truffle-suite"
+                                </p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"web3.js"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"metamask library"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"roboticProcessAutomationRpa" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"UiPath"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Hyland RPA"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"database" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"MongoDB"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Oracle SQL"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"operationalSystems" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Linux"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Windows"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"hylandCertifications" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"OCI"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"hylandInstructorIedCourses" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Workflow Design"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Introduction to Workflow"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"WorkView Implementation"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;],</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='blue-like-json'>"design" </p>:[
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Figma"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Fireworks"</p>,
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p class='salmon-like-json'>"Photoshop"</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;&nbsp;]</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>&nbsp;}</p>
+                            </div>
+                            <div class="terminal-screen-line">
+                                <p>}</p>
+                            </div>
+                        </article>
+
+                    </div>
+        </content>
+    </main>
+
+    <footer>
+        <nav>
+            <div><a href='https://www.linkedin.com/in/pedro-c-73b3041b0/'>
+                    <img
+                        src='https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7d3d774145ac38663f6d1effc6def0334b68ab7e/svgs/brands/linkedin.svg' /></a>
+            </div>
+            <div><a href='https://github.com/ordep2v'>
+                    <img
+                        src='https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7d3d774145ac38663f6d1effc6def0334b68ab7e/svgs/brands/github.svg'></a>
+            </div>
+        </nav>
+        <div class="licenses">
+            Pedro Cunha,2021 - All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
